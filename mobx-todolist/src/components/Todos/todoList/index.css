@@ -1,0 +1,27 @@
+.list {
+  width: 50%;
+  margin: 15px auto;
+}
+
+.list li {
+  text-align: center;
+  list-style: none;
+  line-height: 35px;
+  background: #ccc;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.list .completed {
+  color: green;
+}
+
+.list li span {
+  font-size: 12px;
+  margin-left: 30px;
+  color: red;
+}
+
+.list .toggle {
+  margin-left: 30px;
+}
