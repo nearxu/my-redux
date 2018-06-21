@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import { visbleFilter } from "../reducer/filter";
 import { toggleTodo } from "../reducer/todos";
 
-const getFilterTodos = state => {
-  let filter = state.filter;
-  let todos = state.todos;
+const getFilterTodos = (todos, filter) => {
   switch (filter) {
     case visbleFilter.SHOW_ALL:
       return todos;
@@ -18,10 +16,10 @@ const getFilterTodos = state => {
   }
 };
 
-@connect(
-  todos => todos,
-  { toggleTodo }
-)
+// @connect(
+//   todos => getFilterTodos(state.todos,state.fliter),
+//   { toggleTodo }
+// )
 class TodoList extends Component {
   render() {
     if (!this.props.todos.length) return <div />;
@@ -41,4 +39,15 @@ class TodoList extends Component {
     );
   }
 }
-export default TodoList;
+
+const mapStateToProps = state => ({
+  todos: getFilterTodos(state.todos, state.filter)
+});
+
+const mapDispatchToProps = {
+  toggleTodo: toggleTodo
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);
