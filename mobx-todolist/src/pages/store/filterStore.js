@@ -1,9 +1,7 @@
 import { observable, action, useStrict } from "mobx";
 
 class FilterStore {
-  @observable filterStore;
-  @observable aaa;
-  @observable bbb;
+  @observable filter;
   constructor() {
     this.filter = "";
   }

@@ -45,7 +45,6 @@ class TodoStore {
 
   @computed
   get sortedTodos() {
-    debugger;
     switch (filterStore.filter) {
       case FilterType.ALL:
         return this.todos;
