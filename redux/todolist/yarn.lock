@@ -3276,8 +3276,8 @@ ignore-walk@^3.0.1:
     minimatch "^3.0.4"
 
 ignore@^3.3.3:
-  version "3.3.9"
-  resolved "http://registry.npm.taobao.org/ignore/download/ignore-3.3.9.tgz#64c3cb5b4f100f064e44b05e64e1b3a1d43b0d7b"
+  version "3.3.10"
+  resolved "http://registry.npm.taobao.org/ignore/download/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
 
 import-lazy@^2.1.0:
   version "2.1.0"
