@@ -1,6 +1,6 @@
 <template>
     <p v-if='show'>
-        <span @click = 'handleToggle(date.id)'>{{index+1}}.{{data.message}} <i>{{dateFormat(data.id)}}</i></span>
+        <span :class="messageClass(data.status)" @click='handleToggle(data.id)'>{{index+1}}.{{data.message}} <i>{{dateFormat(data.id)}}</i></span>
         <button @click='handleRemove(data.id)'>delete</button>
     </p>
 </template>
@@ -18,9 +18,12 @@ export default {
     },
     methods:{
         dateFormat(timer){
-            const date = new Date(timer);
+            if(timer){
+                 const date = new Date(timer);
             return `${date.getFullYear()} - ${date.getMonth()+1} - ${date.getDate()}`
-        }
+            }
+        },
+        messageClass:status => ({message:true,done:status})
     }
 }
 </script>

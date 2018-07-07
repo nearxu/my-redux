@@ -10,7 +10,9 @@ let store = new Vuex.Store({
     isShow: true,
     // todolist
     list: [],
-    filter: "ALL"
+    filter: "ALL",
+
+    types:['ALL','UNDO','DONE']
   },
   getters: {
     filterCount(state) {
